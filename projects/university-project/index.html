@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Fleet Coordination | Daniel Söderberg</title>
+
+    <meta
+        name="description"
+        content="Fleet Coordination project developed at Chalmers University of Technology using Non-Linear Model Predictive Control."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <header class="site-header">
+
+        <nav class="navbar container">
+
+            <a href="../../" class="logo">
+                Daniel Söderberg
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="../../#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../../#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../../#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../../#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- Project Hero -->
+
+        <section class="hero project-hero">
+
+            <div class="container hero-content">
+
+                <p class="eyebrow">
+                    University Project
+                </p>
+
+                <h1>
+                    Fleet Coordination
+                </h1>
+
+                <p class="hero-description">
+                    Collision avoidance and coordination of a fleet of
+                    mobile wheeled robots using Non-Linear Model
+                    Predictive Control.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Image -->
+
+        <section class="project-image-section">
+
+            <div class="container">
+
+                <div class="project-image-wrapper">
+
+                    <img
+                        src="../../assets/displayimg.png"
+                        alt="Fleet Coordination project"
+                        class="project-image"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Resources -->
+
+        <section class="project-resources">
+
+            <div class="container">
+
+                <div class="resources-content">
+
+                    <div>
+                        <p class="section-label">
+                            Resources
+                        </p>
+
+                        <h2>
+                            Explore the project.
+                        </h2>
+
+                        <p>
+                            View the source code or read the published
+                            research behind the project.
+                        </p>
+                    </div>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="https://github.com/DanielSoderberg1234/Fleet-coordination"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary"
+                        >
+                            GitHub Repository
+                        </a>
+
+                        <a
+                            href="https://ieeexplore.ieee.org/document/9926724"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-secondary"
+                        >
+                            IEEE Publication
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Overview -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <p class="section-label">
+                    Overview
+                </p>
+
+                <h2>
+                    About the project
+                </h2>
+
+                <div class="about-content">
+
+                    <p>
+                        Fleet Coordination is a project developed during
+                        my studies at Chalmers University of Technology.
+                        The goal was to control a fleet of mobile wheeled
+                        robots while avoiding collisions with other robots,
+                        static obstacles and dynamic obstacles.
+                    </p>
+
+                    <p>
+                        The project used Non-Linear Model Predictive
+                        Control (NMPC) to modify the individual robot
+                        trajectories while maintaining collision-free
+                        motion.
+                    </p>
+
+                    <p>
+                        Both centralized and distributed coordination
+                        schemes were investigated and compared. The
+                        results showed promising performance for both
+                        approaches, with the distributed approach showing
+                        favorable scaling as the number of robots increased.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Technical Approach -->
+
+        <section class="section section-dark">
+
+            <div class="container">
+
+                <p class="section-label">
+                    Approach
+                </p>
+
+                <h2>
+                    Centralized vs distributed control
+                </h2>
+
+                <div class="about-content">
+
+                    <p>
+                        The project investigated two different approaches
+                        for coordinating the robot fleet. In the centralized
+                        approach, the robots were coordinated by a common
+                        optimization problem. In the distributed approach,
+                        the robots performed their coordination in a more
+                        decentralized manner.
+                    </p>
+
+                    <p>
+                        The individual robot trajectories were assumed to
+                        be given initially. The control system then altered
+                        these trajectories to prevent collisions with other
+                        robots and both static and dynamic obstacles.
+                    </p>
+
+                    <p>
+                        The project also evaluated the computational
+                        complexity of the two approaches by measuring
+                        solver times for different numbers of robots and
+                        different scenarios.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Technologies -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <p class="section-label">
+                    Technology
+                </p>
+
+                <h2>
+                    Technologies used
+                </h2>
+
+                <ul class="skill-list">
+
+                    <li>Python</li>
+                    <li>Non-Linear MPC</li>
+                    <li>Optimal Control</li>
+                    <li>Robot Simulation</li>
+                    <li>Collision Avoidance</li>
+                    <li>OpEn</li>
+                    <li>Rust</li>
+                    <li>C</li>
+                    <li>Anaconda</li>
+                    <li>Git</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Daniel Söderberg
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../../js/main.js"></script>
+
+</body>
+
+</html>
