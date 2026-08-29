@@ -417,6 +417,10 @@ p {
         border-color 0.2s ease;
 }
 
+.project-card + .project-card {
+    margin-top: 1.5rem;
+}
+
 
 .project-card:hover {
     transform: translateY(-4px);
