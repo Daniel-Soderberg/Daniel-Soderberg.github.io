@@ -823,6 +823,37 @@ p {
     color: var(--color-text);
 }
 
+/* =========================================================
+   Education Projects
+   ========================================================= */
+
+.education-projects {
+    margin-top: 3rem;
+}
+
+
+.education-project {
+    padding-top: 1.5rem;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+.education-project + .education-project {
+    margin-top: 1.5rem;
+}
+
+
+.education-project h3 {
+    margin-bottom: 0.75rem;
+}
+
+
+.education-project p {
+    margin-bottom: 1rem;
+}
+
+
 
 /* =========================================================
    Skills
