@@ -45,6 +45,8 @@ body {
 
     color: var(--color-text);
     background: var(--color-background);
+
+    -webkit-font-smoothing: antialiased;
 }
 
 
@@ -114,6 +116,7 @@ p {
 
 .section-intro {
     max-width: 650px;
+
     margin-bottom: 3rem;
 }
 
@@ -132,6 +135,7 @@ p {
     border-bottom: 1px solid var(--color-border);
 
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 
@@ -202,6 +206,7 @@ p {
     color: var(--color-accent);
 
     font-weight: 700;
+
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -315,6 +320,7 @@ p {
 .hero-buttons {
     display: flex;
     gap: 1rem;
+
     flex-wrap: wrap;
 }
 
@@ -343,6 +349,7 @@ p {
 
 .button-primary {
     color: #082f49;
+
     background: var(--color-accent);
 }
 
@@ -359,6 +366,7 @@ p {
 
 .button-secondary:hover {
     border-color: var(--color-accent);
+
     color: var(--color-accent);
 }
 
@@ -471,9 +479,9 @@ p {
 .experience-timeline {
     position: relative;
 
-    max-width: 900px;
+    max-width: 950px;
 
-    margin-top: 3rem;
+    margin-top: 3.5rem;
 }
 
 
@@ -484,7 +492,7 @@ p {
 
     top: 0;
     bottom: 0;
-    left: 9px;
+    left: 10px;
 
     width: 2px;
 
@@ -497,11 +505,11 @@ p {
 
     display: grid;
 
-    grid-template-columns: 20px 1fr;
+    grid-template-columns: 22px minmax(0, 1fr);
 
-    gap: 2rem;
+    gap: 2.25rem;
 
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
 }
 
 
@@ -527,7 +535,8 @@ p {
 
     margin-top: 2rem;
 
-    border: 4px solid var(--color-background-dark);
+    border: 4px solid var(--color-background);
+
     border-radius: 50%;
 
     background: var(--color-accent);
@@ -538,7 +547,9 @@ p {
 
 
 .experience-card {
-    padding: 2rem 2.25rem;
+    min-width: 0;
+
+    padding: 2.25rem 2.5rem;
 
     background: var(--color-surface);
 
@@ -547,7 +558,8 @@ p {
 
     transition:
         transform 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
@@ -555,6 +567,9 @@ p {
     transform: translateY(-4px);
 
     border-color: var(--color-accent);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -596,6 +611,8 @@ p {
 .experience-location {
     flex-shrink: 0;
 
+    padding-top: 0.15rem;
+
     color: var(--color-text-muted);
 
     font-size: 0.95rem;
@@ -632,9 +649,9 @@ p {
 .education-timeline {
     position: relative;
 
-    max-width: 900px;
+    max-width: 950px;
 
-    margin-top: 3rem;
+    margin-top: 3.5rem;
 
     margin-bottom: 2rem;
 }
@@ -647,7 +664,7 @@ p {
 
     top: 0;
     bottom: 0;
-    left: 9px;
+    left: 10px;
 
     width: 2px;
 
@@ -660,11 +677,11 @@ p {
 
     display: grid;
 
-    grid-template-columns: 20px 1fr;
+    grid-template-columns: 22px minmax(0, 1fr);
 
-    gap: 2rem;
+    gap: 2.25rem;
 
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
 }
 
 
@@ -690,7 +707,8 @@ p {
 
     margin-top: 2rem;
 
-    border: 4px solid var(--color-background);
+    border: 4px solid var(--color-background-dark);
+
     border-radius: 50%;
 
     background: var(--color-accent);
@@ -701,7 +719,9 @@ p {
 
 
 .education-card {
-    padding: 2rem 2.25rem;
+    min-width: 0;
+
+    padding: 2.25rem 2.5rem;
 
     background: var(--color-surface);
 
@@ -710,7 +730,8 @@ p {
 
     transition:
         transform 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
@@ -718,6 +739,9 @@ p {
     transform: translateY(-4px);
 
     border-color: var(--color-accent);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -798,6 +822,8 @@ p {
 
 .course-section {
     max-width: 900px;
+
+    margin-top: 3rem;
 }
 
 
@@ -823,12 +849,18 @@ p {
     color: var(--color-text);
 }
 
+
 /* =========================================================
    Education Projects
    ========================================================= */
 
 .education-projects {
-    margin-top: 3rem;
+    margin-top: 3.5rem;
+}
+
+
+.education-projects > .section-label {
+    margin-bottom: 1rem;
 }
 
 
@@ -854,13 +886,13 @@ p {
 }
 
 
-
 /* =========================================================
    Skills
    ========================================================= */
 
 .skill-list {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 0.75rem;
@@ -878,6 +910,17 @@ p {
     border-radius: 5px;
 
     color: var(--color-text);
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.skill-list li:hover {
+    border-color: var(--color-accent);
+
+    color: var(--color-accent);
 }
 
 
@@ -917,7 +960,25 @@ p {
    Responsive
    ========================================================= */
 
+@media (max-width: 800px) {
+
+    .resources-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .resources-content .hero-buttons {
+        width: 100%;
+    }
+
+}
+
+
 @media (max-width: 700px) {
+
+    /* Navigation */
 
     .navbar {
         flex-direction: column;
@@ -932,8 +993,14 @@ p {
         gap: 1rem;
 
         font-size: 0.9rem;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
     }
 
+
+    /* Hero */
 
     .hero {
         min-height: 75vh;
@@ -945,51 +1012,59 @@ p {
     }
 
 
-    .project-image-section {
-        padding-bottom: 50px;
+    .hero-description {
+        font-size: 1.15rem;
     }
 
 
-    .project-resources {
-        padding: 60px 0;
-    }
-
-
-    .resources-content {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 2rem;
-    }
-
+    /* Sections */
 
     .section {
         padding: 70px 0;
     }
 
 
+    /* Project image */
+
+    .project-image-section {
+        padding-bottom: 50px;
+    }
+
+
+    /* Project resources */
+
+    .project-resources {
+        padding: 60px 0;
+    }
+
+
+    /* Project cards */
+
     .project-card {
         padding: 1.5rem;
     }
 
 
-    /* Experience */
+    /* =====================================================
+       Experience Timeline — Mobile
+       ===================================================== */
 
     .experience-timeline {
         margin-top: 2rem;
     }
 
 
-    .experience-item {
-        grid-template-columns: 14px 1fr;
-
-        gap: 1rem;
+    .experience-timeline::before {
+        left: 6px;
     }
 
 
-    .experience-timeline::before {
-        left: 6px;
+    .experience-item {
+        grid-template-columns: 14px minmax(0, 1fr);
+
+        gap: 1rem;
+
+        padding-bottom: 1.5rem;
     }
 
 
@@ -1018,26 +1093,32 @@ p {
 
 
     .experience-location {
+        padding-top: 0;
+
         font-size: 0.9rem;
     }
 
 
-    /* Education */
+    /* =====================================================
+       Education Timeline — Mobile
+       ===================================================== */
 
     .education-timeline {
         margin-top: 2rem;
     }
 
 
-    .education-item {
-        grid-template-columns: 14px 1fr;
-
-        gap: 1rem;
+    .education-timeline::before {
+        left: 6px;
     }
 
 
-    .education-timeline::before {
-        left: 6px;
+    .education-item {
+        grid-template-columns: 14px minmax(0, 1fr);
+
+        gap: 1rem;
+
+        padding-bottom: 1.5rem;
     }
 
 
@@ -1067,8 +1148,83 @@ p {
 
     /* Courses */
 
+    .course-section {
+        margin-top: 2.5rem;
+    }
+
+
     .course-list {
         grid-template-columns: 1fr;
+    }
+
+
+    /* Education projects */
+
+    .education-projects {
+        margin-top: 2.5rem;
+    }
+
+
+    /* Skills */
+
+    .skill-list {
+        gap: 0.6rem;
+    }
+
+
+    .skill-list li {
+        padding: 0.45rem 0.85rem;
+    }
+
+}
+
+
+/* =========================================================
+   Very Small Screens
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .container {
+        width: min(92%, var(--max-width));
+    }
+
+
+    h1 {
+        font-size: clamp(2.4rem, 12vw, 3.5rem);
+    }
+
+
+    h2 {
+        font-size: clamp(1.8rem, 9vw, 2.4rem);
+    }
+
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+
+    .hero-buttons .button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .experience-card,
+    .education-card {
+        padding: 1.25rem;
+    }
+
+
+    .project-card {
+        padding: 1.25rem;
     }
 
 }
