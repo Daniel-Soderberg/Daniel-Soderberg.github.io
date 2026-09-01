@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        STM32F303 IMU | Daniel Söderberg
+    </title>
+
+    <meta
+        name="description"
+        content="Embedded IMU project developed using an STM32F303 Discovery board, including sensor drivers, calibration and data processing."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <header class="site-header">
+
+        <nav class="navbar container">
+
+            <a href="../../" class="logo">
+                Daniel Söderberg
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="../../#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../../#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../../#experience">
+                        Experience
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../../#education">
+                        Education
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../../#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../../#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- Project Hero -->
+
+        <section class="hero project-hero">
+
+            <div class="container hero-content">
+
+                <p class="eyebrow">
+                    Embedded Systems
+                </p>
+
+                <h1>
+                    STM32F303 IMU
+                </h1>
+
+                <p class="hero-description">
+                    Embedded IMU project using an STM32F303 Discovery
+                    board to interface with inertial sensors, collect
+                    measurements and process sensor data.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Resources -->
+
+        <section class="project-resources">
+
+            <div class="container">
+
+                <div class="resources-content">
+
+                    <div>
+
+                        <p class="section-label">
+                            Resources
+                        </p>
+
+                        <h2>
+                            View the source code.
+                        </h2>
+
+                        <p>
+                            The complete project is available on GitHub,
+                            including the STM32CubeMX configuration,
+                            application source code and supporting scripts.
+                        </p>
+
+                    </div>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="https://github.com/Daniel-Soderberg/IMU"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary"
+                        >
+                            GitHub Repository
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Overview -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <p class="section-label">
+                    Overview
+                </p>
+
+                <h2>
+                    About the project
+                </h2>
+
+                <div class="about-content">
+
+                    <p>
+                        This project implements an embedded inertial
+                        measurement unit using an STM32F303 Discovery
+                        board.
+                    </p>
+
+                    <p>
+                        The system interfaces with accelerometer,
+                        gyroscope and magnetometer sensors and provides
+                        a software interface for collecting and processing
+                        the measured data.
+                    </p>
+
+                    <p>
+                        The project was developed using STM32CubeMX and
+                        STM32 HAL, with the application code written in C.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Technical Focus -->
+
+        <section class="section section-dark">
+
+            <div class="container">
+
+                <p class="section-label">
+                    Technical focus
+                </p>
+
+                <h2>
+                    Embedded sensor processing
+                </h2>
+
+                <div class="about-content">
+
+                    <p>
+                        The project includes low-level interfaces for the
+                        IMU sensors and software for reading and processing
+                        sensor measurements on the STM32 microcontroller.
+                    </p>
+
+                    <p>
+                        Sensor calibration and data collection are supported
+                        through additional Python scripts running on a host
+                        computer.
+                    </p>
+
+                    <p>
+                        The project also includes magnetometer calibration
+                        data and tools for visualising the collected IMU
+                        measurements.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Technologies -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <p class="section-label">
+                    Technology
+                </p>
+
+                <h2>
+                    Technologies & tools
+                </h2>
+
+                <ul class="skill-list">
+
+                    <li>C</li>
+                    <li>STM32F303</li>
+                    <li>STM32CubeMX</li>
+                    <li>STM32 HAL</li>
+                    <li>Embedded Systems</li>
+                    <li>IMU Sensors</li>
+                    <li>Accelerometer</li>
+                    <li>Gyroscope</li>
+                    <li>Magnetometer</li>
+                    <li>Python</li>
+                    <li>UART</li>
+                    <li>Git</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Structure -->
+
+        <section class="section section-dark">
+
+            <div class="container">
+
+                <p class="section-label">
+                    Project structure
+                </p>
+
+                <h2>
+                    Source and configuration
+                </h2>
+
+                <div class="about-content">
+
+                    <p>
+                        The STM32CubeMX project configuration is stored
+                        in the IMU.ioc file. Generated STM32 firmware
+                        packages and build artifacts are intentionally
+                        excluded from the repository.
+                    </p>
+
+                    <p>
+                        The repository contains the application source
+                        code, sensor drivers, startup and linker files,
+                        Makefile and Python-based supporting tools.
+                    </p>
+
+                    <p>
+                        A new checkout can be configured by opening the
+                        IMU.ioc file in STM32CubeMX, generating the required
+                        files and then building the project using the
+                        included Makefile.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Navigation -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="../../#projects"
+                        class="button button-primary"
+                    >
+                        Back to projects
+                    </a>
+
+                    <a
+                        href="https://github.com/Daniel-Soderberg/IMU"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-secondary"
+                    >
+                        View on GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Daniel Söderberg
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../../js/main.js"></script>
+
+</body>
+
+</html>
