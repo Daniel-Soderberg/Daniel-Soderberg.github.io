@@ -184,15 +184,13 @@
                             <article>
 
                                 <h3>
-                                    Sensor calibration
+                                    Sensor fusion
                                 </h3>
 
                                 <p>
-                                    Developed calibration workflows
-                                    for the sensors and collected
-                                    measurement data for determining
-                                    sensor characteristics and
-                                    calibration parameters.
+                                    Implemented a complementary 
+                                    filter that fuses sensor
+                                    data.
                                 </p>
 
                             </article>
@@ -250,30 +248,29 @@
                         <p>
                             The project separates the embedded
                             firmware from the host-side tools used
-                            for calibration and analysis.
+                            for visualisation and analysis.
                         </p>
 
                         <div class="architecture-list">
 
                             <div>
-                                <code>IMU.ioc</code>
+                                <code>L3GD20</code>
                                 <span>
-                                    STM32CubeMX project configuration
+                                    Gyroscope
                                 </span>
                             </div>
 
                             <div>
-                                <code>Core/</code>
+                                <code>LSM303DLHC/</code>
                                 <span>
-                                    Application source and generated
-                                    STM32 firmware files
+                                    Accelerometer and magnetometer
                                 </span>
                             </div>
 
                             <div>
-                                <code>Drivers/</code>
+                                <code>USART/</code>
                                 <span>
-                                    Sensor and hardware interfaces
+                                    Communication with host
                                 </span>
                             </div>
 
@@ -282,13 +279,6 @@
                                 <span>
                                     Calibration, data collection
                                     and visualisation
-                                </span>
-                            </div>
-
-                            <div>
-                                <code>Makefile</code>
-                                <span>
-                                    Firmware build configuration
                                 </span>
                             </div>
 
@@ -339,12 +329,17 @@
 
                                     <p>
                                         Read inertial sensor data from
-                                        the embedded target and transfer
-                                        measurements to the host system.
+                                        the embedded sensors. Started by 
+                                        setting the ontrol registers.
+                                        Interrupt pins on the MCU were configured 
+                                        to avoid polling the data. An 
+                                        interrupt notifies the MCU to 
+                                        empty the buffer. 
                                     </p>
                                 </div>
 
                             </li>
+                            
 
 
                             <li>
@@ -352,13 +347,18 @@
 
                                 <div>
                                     <strong>
-                                        Calibrate sensors
+                                        Sensor fusion
                                     </strong>
 
                                     <p>
-                                        Collect calibration data and
-                                        determine parameters used to
-                                        improve measurement quality.
+                                        Estimate the angles using 
+                                        a complementary filter. 
+                                        Using only the gyroscope to 
+                                        determine the angle will cause 
+                                        drift due to integration of 
+                                        the angular rates. Accelerometer
+                                        data can hence be used to
+                                        compensate the drift.
                                     </p>
                                 </div>
 
@@ -412,6 +412,8 @@
                             <li>Magnetometer</li>
                             <li>Python</li>
                             <li>UART</li>
+                            <li>SPI</li>
+                            <li>I2C</li>
                             <li>Git</li>
 
                         </ul>

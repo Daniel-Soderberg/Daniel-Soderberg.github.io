@@ -310,7 +310,7 @@
                         </p>
 
                         <h2>
-                            From communication to gateway
+                            From MODBUS to CAN and vice versa
                         </h2>
 
                         <ol class="workflow">
@@ -320,13 +320,17 @@
 
                                 <div>
                                     <strong>
-                                        Receive data
+                                        MODBUS
                                     </strong>
 
                                     <p>
-                                        Receive communication messages
-                                        from connected devices through
-                                        the available interfaces.
+                                        USART communication is set 
+                                        up with DMA and interrupts. 
+                                        The DMA buffer is processed
+                                        when the idle line interrupt
+                                        is set. The data is then 
+                                        sent to a FreeRTOS buffer to 
+                                        be processed.
                                     </p>
                                 </div>
 
@@ -338,13 +342,17 @@
 
                                 <div>
                                     <strong>
-                                        Process messages
+                                        CAN
                                     </strong>
 
                                     <p>
-                                        Handle incoming communication
-                                        using the embedded firmware and
-                                        protocol-specific logic.
+                                        A MCP2551 transceiver is 
+                                        connected to the board with 
+                                        the Rx and Tx pin. The MCU
+                                        is configured with receive
+                                        interrupt. When data is
+                                        received it is put in a 
+                                        FreeRTOS buffer for processing.
                                     </p>
                                 </div>
 
@@ -356,31 +364,16 @@
 
                                 <div>
                                     <strong>
-                                        Coordinate tasks
+                                        Data Gateway
                                     </strong>
 
                                     <p>
-                                        Use FreeRTOS to schedule and
-                                        coordinate communication and
-                                        application tasks.
-                                    </p>
-                                </div>
-
-                            </li>
-
-
-                            <li>
-                                <span>04</span>
-
-                                <div>
-                                    <strong>
-                                        Forward data
-                                    </strong>
-
-                                    <p>
-                                        Transmit processed information
-                                        through the appropriate
-                                        communication interface.
+                                        For gateway functionality
+                                        a signal abstraction layer
+                                        is utilzed. The CAN and MODBUS
+                                        driver can read from or write 
+                                        to the signal layer depending 
+                                        on the setup. 
                                     </p>
                                 </div>
 
