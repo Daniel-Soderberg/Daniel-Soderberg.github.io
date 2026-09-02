@@ -11,12 +11,12 @@
     >
 
     <title>
-        STM32F3 IMU | Daniel Söderberg
+        Motor Control Development | Daniel Söderberg
     </title>
 
     <meta
         name="description"
-        content="Embedded IMU project developed using an STM32F303 Discovery board, including sensor drivers, calibration, data collection and Python-based analysis."
+        content="Embedded motor control development using an IHM03 motor development kit, STM32 peripherals, synchronized PWM and ADC sampling, and open-loop Space Vector Modulation."
     >
 
     <link
@@ -100,35 +100,35 @@
                 </a>
 
                 <p class="section-label">
-                    Embedded Systems
+                    Motor Control · Embedded Systems
                 </p>
 
                 <h1>
-                    STM32F3 IMU
+                    Motor Control Development
                 </h1>
 
                 <p class="project-lead">
-                    Embedded sensor acquisition and processing using
-                    an STM32F303 Discovery board, with supporting
-                    Python tools for calibration, data collection
-                    and analysis.
+                    Embedded motor control development using an IHM03
+                    motor development kit, with manually configured
+                    STM32 peripherals, synchronized PWM and ADC
+                    sampling, and open-loop Space Vector Modulation.
                 </p>
 
                 <div class="project-meta">
 
                     <div>
                         <span>Platform</span>
-                        <strong>STM32F303</strong>
+                        <strong>IHM03</strong>
                     </div>
 
                     <div>
-                        <span>Language</span>
-                        <strong>C</strong>
+                        <span>Control</span>
+                        <strong>Space Vector Modulation</strong>
                     </div>
 
                     <div>
-                        <span>Tools</span>
-                        <strong>STM32CubeMX · Python</strong>
+                        <span>Development</span>
+                        <strong>STM32CubeMX · C</strong>
                     </div>
 
                 </div>
@@ -155,27 +155,28 @@
                         </p>
 
                         <h2>
-                            Embedded IMU development
+                            Embedded motor control
                         </h2>
 
                         <p>
-                            This project implements an embedded inertial
-                            measurement system using an STM32F303
-                            Discovery board.
+                            This project focuses on developing a
+                            microcontroller-based motor control system
+                            using an IHM03 motor development kit.
                         </p>
 
                         <p>
-                            The system interfaces with accelerometer,
-                            gyroscope and magnetometer sensors and
-                            provides software for acquiring and
-                            processing the resulting measurements.
+                            The project started with configuring the
+                            microcontroller peripherals using STM32CubeMX.
+                            The peripheral configuration and timing
+                            requirements were then developed with a focus
+                            on the requirements of motor control.
                         </p>
 
                         <p>
-                            The firmware was developed in C using
-                            STM32CubeMX and the STM32 HAL, with
-                            additional Python tooling used for
-                            calibration, data collection and analysis.
+                            The current implementation uses synchronized
+                            PWM generation and ADC sampling together
+                            with open-loop Space Vector Modulation
+                            to control the motor.
                         </p>
 
                     </section>
@@ -196,15 +197,15 @@
                             <article>
 
                                 <h3>
-                                    Sensor interfaces
+                                    Peripheral configuration
                                 </h3>
 
                                 <p>
-                                    Implemented low-level interfaces
-                                    for the IMU sensors and handled
-                                    acquisition of accelerometer,
-                                    gyroscope and magnetometer data
-                                    on the microcontroller.
+                                    Configured the required
+                                    microcontroller peripherals using
+                                    STM32CubeMX, with the peripheral
+                                    setup selected specifically for
+                                    the motor-control application.
                                 </p>
 
                             </article>
@@ -213,15 +214,15 @@
                             <article>
 
                                 <h3>
-                                    Sensor calibration
+                                    PWM generation
                                 </h3>
 
                                 <p>
-                                    Developed calibration workflows
-                                    for the sensors and collected
-                                    measurement data for determining
-                                    sensor characteristics and
-                                    calibration parameters.
+                                    Configured the PWM timer for
+                                    center-aligned operation using
+                                    up-down counting mode, providing
+                                    symmetrical switching suitable for
+                                    motor-control applications.
                                 </p>
 
                             </article>
@@ -230,14 +231,16 @@
                             <article>
 
                                 <h3>
-                                    Data processing
+                                    Synchronized ADC sampling
                                 </h3>
 
                                 <p>
-                                    Built supporting Python tools for
-                                    collecting, processing and
-                                    visualising measurements from
-                                    the embedded system.
+                                    Configured ADC sampling to occur
+                                    during the PWM off cycles. This is
+                                    particularly important for the
+                                    low-side current measurement
+                                    topology used by the motor
+                                    development kit.
                                 </p>
 
                             </article>
@@ -246,15 +249,14 @@
                             <article>
 
                                 <h3>
-                                    Embedded development
+                                    Space Vector Modulation
                                 </h3>
 
                                 <p>
-                                    Worked with STM32 peripherals,
-                                    firmware configuration, build
-                                    tooling and communication between
-                                    the embedded target and host
-                                    computer.
+                                    Implemented open-loop Space Vector
+                                    Modulation to generate the three-phase
+                                    PWM signals required to drive the
+                                    motor.
                                 </p>
 
                             </article>
@@ -271,51 +273,58 @@
                         </p>
 
                         <h2>
-                            Project structure
+                            PWM and current measurement
                         </h2>
 
                         <p>
-                            The project separates the embedded
-                            firmware from the host-side tools used
-                            for calibration and analysis.
+                            The control system is built around the timing
+                            relationship between PWM generation and ADC
+                            sampling. The PWM timer operates in up-down
+                            counting mode, while ADC measurements are
+                            scheduled during the switching intervals where
+                            the low-side current measurement provides a
+                            suitable measurement window.
                         </p>
 
                         <div class="architecture-list">
 
                             <div>
-                                <code>IMU.ioc</code>
+                                <code>PWM Timer</code>
                                 <span>
-                                    STM32CubeMX project configuration
+                                    Center-aligned PWM using
+                                    up-down counting mode
                                 </span>
                             </div>
 
                             <div>
-                                <code>Core/</code>
+                                <code>ADC</code>
                                 <span>
-                                    Application source and generated
-                                    STM32 firmware files
+                                    Current measurement synchronized
+                                    with the PWM switching cycle
                                 </span>
                             </div>
 
                             <div>
-                                <code>Drivers/</code>
+                                <code>Low-side sensing</code>
                                 <span>
-                                    Sensor and hardware interfaces
+                                    Current measurements taken during
+                                    appropriate PWM off cycles
                                 </span>
                             </div>
 
                             <div>
-                                <code>Python tools</code>
+                                <code>SVM</code>
                                 <span>
-                                    Calibration, data collection
-                                    and visualisation
+                                    Space Vector Modulation generating
+                                    three-phase voltage references
                                 </span>
                             </div>
 
                             <div>
-                                <code>Makefile</code>
+                                <code>STM32CubeMX</code>
                                 <span>
-                                    Firmware build configuration
+                                    Peripheral configuration and
+                                    microcontroller initialization
                                 </span>
                             </div>
 
@@ -327,11 +336,11 @@
                     <section class="project-section">
 
                         <p class="section-label">
-                            Workflow
+                            Control workflow
                         </p>
 
                         <h2>
-                            From sensor to analysis
+                            From voltage reference to motor drive
                         </h2>
 
                         <ol class="workflow">
@@ -340,12 +349,13 @@
                                 <span>01</span>
                                 <div>
                                     <strong>
-                                        Configure hardware
+                                        Configure peripherals
                                     </strong>
                                     <p>
-                                        Configure the STM32 peripherals
-                                        and sensor interfaces using
-                                        STM32CubeMX.
+                                        Configure the STM32 timers,
+                                        ADC and supporting peripherals
+                                        for the motor-control
+                                        application.
                                     </p>
                                 </div>
                             </li>
@@ -354,12 +364,12 @@
                                 <span>02</span>
                                 <div>
                                     <strong>
-                                        Acquire measurements
+                                        Generate voltage references
                                     </strong>
                                     <p>
-                                        Read inertial sensor data from
-                                        the embedded target and transfer
-                                        measurements to the host system.
+                                        Calculate the desired rotating
+                                        voltage vector for the open-loop
+                                        motor-control system.
                                     </p>
                                 </div>
                             </li>
@@ -368,12 +378,12 @@
                                 <span>03</span>
                                 <div>
                                     <strong>
-                                        Calibrate sensors
+                                        Apply Space Vector Modulation
                                     </strong>
                                     <p>
-                                        Collect calibration data and
-                                        determine parameters used to
-                                        improve measurement quality.
+                                        Convert the voltage reference
+                                        into the corresponding three-phase
+                                        PWM duty cycles.
                                     </p>
                                 </div>
                             </li>
@@ -382,17 +392,46 @@
                                 <span>04</span>
                                 <div>
                                     <strong>
-                                        Analyse data
+                                        Sample motor currents
                                     </strong>
                                     <p>
-                                        Use Python tooling to process
-                                        and visualise the collected
-                                        measurements.
+                                        Trigger ADC measurements during
+                                        suitable PWM off cycles to acquire
+                                        current information from the
+                                        low-side measurement circuitry.
                                     </p>
                                 </div>
                             </li>
 
                         </ol>
+
+                    </section>
+
+
+                    <section class="project-section">
+
+                        <p class="section-label">
+                            Current status
+                        </p>
+
+                        <h2>
+                            Open-loop control
+                        </h2>
+
+                        <p>
+                            The current implementation focuses on
+                            establishing the low-level motor-control
+                            infrastructure and validating the PWM,
+                            ADC timing and Space Vector Modulation
+                            functionality.
+                        </p>
+
+                        <p>
+                            The system currently operates in open loop,
+                            providing a foundation for further development
+                            of current measurement processing and
+                            closed-loop motor-control functionality.
+                        </p>
 
                     </section>
 
@@ -408,10 +447,8 @@
                         </h2>
 
                         <p>
-                            The complete project is available on GitHub,
-                            including the STM32CubeMX configuration,
-                            firmware source code and supporting Python
-                            tools.
+                            The complete project source code and
+                            development history are available on GitHub.
                         </p>
 
                         <a
@@ -441,16 +478,15 @@
                         <ul class="technology-list">
 
                             <li>C</li>
-                            <li>STM32F303</li>
+                            <li>STM32</li>
                             <li>STM32CubeMX</li>
                             <li>STM32 HAL</li>
+                            <li>IHM03</li>
+                            <li>Motor Control</li>
+                            <li>PWM</li>
+                            <li>ADC</li>
+                            <li>Space Vector Modulation</li>
                             <li>Embedded Systems</li>
-                            <li>IMU</li>
-                            <li>Accelerometer</li>
-                            <li>Gyroscope</li>
-                            <li>Magnetometer</li>
-                            <li>Python</li>
-                            <li>UART</li>
                             <li>Git</li>
 
                         </ul>
@@ -465,8 +501,36 @@
                         </p>
 
                         <p>
-                            STM32F303 Discovery board with
-                            onboard inertial sensors.
+                            IHM03 motor development kit with
+                            low-side current measurement.
+                        </p>
+
+                    </div>
+
+
+                    <div class="sidebar-block">
+
+                        <p class="sidebar-label">
+                            Control
+                        </p>
+
+                        <p>
+                            Open-loop Space Vector Modulation
+                            with center-aligned PWM generation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="sidebar-block">
+
+                        <p class="sidebar-label">
+                            Measurement
+                        </p>
+
+                        <p>
+                            ADC current sampling synchronized
+                            with the PWM switching cycle.
                         </p>
 
                     </div>
@@ -479,8 +543,9 @@
                         </p>
 
                         <p>
-                            Embedded firmware, sensor interfaces,
-                            calibration and measurement processing.
+                            Motor-control peripherals, PWM timing,
+                            current measurement and embedded
+                            control algorithms.
                         </p>
 
                     </div>

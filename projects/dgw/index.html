@@ -11,12 +11,12 @@
     >
 
     <title>
-        STM32F3 IMU | Daniel Söderberg
+        STM32F3 Data Gateway | Daniel Söderberg
     </title>
 
     <meta
         name="description"
-        content="Embedded IMU project developed using an STM32F303 Discovery board, including sensor drivers, calibration, data collection and Python-based analysis."
+        content="Embedded data gateway developed using an STM32F3 Discovery board, featuring Modbus RTU over USART, CAN communication, MCP2551 transceivers and FreeRTOS."
     >
 
     <link
@@ -104,21 +104,21 @@
                 </p>
 
                 <h1>
-                    STM32F3 IMU
+                    STM32F3 Data Gateway
                 </h1>
 
                 <p class="project-lead">
-                    Embedded sensor acquisition and processing using
-                    an STM32F303 Discovery board, with supporting
-                    Python tools for calibration, data collection
-                    and analysis.
+                    Embedded communication gateway developed using
+                    an STM32F3 Discovery board, implementing Modbus RTU
+                    over USART and CAN communication with a FreeRTOS-based
+                    firmware architecture.
                 </p>
 
                 <div class="project-meta">
 
                     <div>
                         <span>Platform</span>
-                        <strong>STM32F303</strong>
+                        <strong>STM32F3</strong>
                     </div>
 
                     <div>
@@ -127,8 +127,8 @@
                     </div>
 
                     <div>
-                        <span>Tools</span>
-                        <strong>STM32CubeMX · Python</strong>
+                        <span>Architecture</span>
+                        <strong>FreeRTOS</strong>
                     </div>
 
                 </div>
@@ -155,27 +155,29 @@
                         </p>
 
                         <h2>
-                            Embedded IMU development
+                            Embedded data gateway
                         </h2>
 
                         <p>
-                            This project implements an embedded inertial
-                            measurement system using an STM32F303
-                            Discovery board.
+                            This project implements an embedded data
+                            gateway using an STM32F3 Discovery board.
+                            The system is designed to communicate with
+                            external devices using multiple communication
+                            interfaces.
                         </p>
 
                         <p>
-                            The system interfaces with accelerometer,
-                            gyroscope and magnetometer sensors and
-                            provides software for acquiring and
-                            processing the resulting measurements.
+                            A Modbus RTU interface was developed over
+                            USART, providing serial communication with
+                            external devices using the Modbus protocol.
                         </p>
 
                         <p>
-                            The firmware was developed in C using
-                            STM32CubeMX and the STM32 HAL, with
-                            additional Python tooling used for
-                            calibration, data collection and analysis.
+                            The system also interfaces with a CAN bus
+                            through MCP2551 CAN transceivers. The firmware
+                            uses FreeRTOS to manage the different
+                            communication tasks and coordinate the
+                            gateway functionality.
                         </p>
 
                     </section>
@@ -196,15 +198,15 @@
                             <article>
 
                                 <h3>
-                                    Sensor interfaces
+                                    Modbus RTU
                                 </h3>
 
                                 <p>
-                                    Implemented low-level interfaces
-                                    for the IMU sensors and handled
-                                    acquisition of accelerometer,
-                                    gyroscope and magnetometer data
-                                    on the microcontroller.
+                                    Developed a Modbus RTU communication
+                                    interface over USART, handling
+                                    serial communication and the
+                                    exchange of structured Modbus
+                                    messages.
                                 </p>
 
                             </article>
@@ -213,15 +215,15 @@
                             <article>
 
                                 <h3>
-                                    Sensor calibration
+                                    CAN communication
                                 </h3>
 
                                 <p>
-                                    Developed calibration workflows
-                                    for the sensors and collected
-                                    measurement data for determining
-                                    sensor characteristics and
-                                    calibration parameters.
+                                    Implemented CAN communication using
+                                    the STM32 CAN peripheral together
+                                    with external MCP2551 CAN
+                                    transceivers to interface with
+                                    the physical CAN bus.
                                 </p>
 
                             </article>
@@ -230,14 +232,14 @@
                             <article>
 
                                 <h3>
-                                    Data processing
+                                    FreeRTOS
                                 </h3>
 
                                 <p>
-                                    Built supporting Python tools for
-                                    collecting, processing and
-                                    visualising measurements from
-                                    the embedded system.
+                                    Structured the firmware using
+                                    FreeRTOS tasks to allow communication
+                                    interfaces and application logic
+                                    to operate concurrently.
                                 </p>
 
                             </article>
@@ -246,15 +248,14 @@
                             <article>
 
                                 <h3>
-                                    Embedded development
+                                    Embedded firmware
                                 </h3>
 
                                 <p>
-                                    Worked with STM32 peripherals,
-                                    firmware configuration, build
-                                    tooling and communication between
-                                    the embedded target and host
-                                    computer.
+                                    Developed the gateway firmware in C,
+                                    working with STM32 peripherals,
+                                    hardware interfaces and the
+                                    real-time software architecture.
                                 </p>
 
                             </article>
@@ -271,51 +272,56 @@
                         </p>
 
                         <h2>
-                            Project structure
+                            Gateway architecture
                         </h2>
 
                         <p>
-                            The project separates the embedded
-                            firmware from the host-side tools used
-                            for calibration and analysis.
+                            The system combines multiple communication
+                            interfaces with a FreeRTOS-based firmware
+                            architecture. Communication handling is
+                            separated into dedicated software components
+                            running on the STM32 microcontroller.
                         </p>
 
                         <div class="architecture-list">
 
                             <div>
-                                <code>IMU.ioc</code>
+                                <code>Modbus RTU</code>
                                 <span>
-                                    STM32CubeMX project configuration
+                                    Serial communication protocol
+                                    implemented over USART
                                 </span>
                             </div>
 
                             <div>
-                                <code>Core/</code>
+                                <code>USART</code>
                                 <span>
-                                    Application source and generated
-                                    STM32 firmware files
+                                    STM32 serial peripheral used for
+                                    Modbus communication
                                 </span>
                             </div>
 
                             <div>
-                                <code>Drivers/</code>
+                                <code>CAN</code>
                                 <span>
-                                    Sensor and hardware interfaces
+                                    CAN communication through the
+                                    STM32 CAN peripheral
                                 </span>
                             </div>
 
                             <div>
-                                <code>Python tools</code>
+                                <code>MCP2551</code>
                                 <span>
-                                    Calibration, data collection
-                                    and visualisation
+                                    External CAN transceivers providing
+                                    the physical CAN interface
                                 </span>
                             </div>
 
                             <div>
-                                <code>Makefile</code>
+                                <code>FreeRTOS</code>
                                 <span>
-                                    Firmware build configuration
+                                    Real-time task scheduling and
+                                    coordination of firmware functionality
                                 </span>
                             </div>
 
@@ -331,7 +337,7 @@
                         </p>
 
                         <h2>
-                            From sensor to analysis
+                            From communication to gateway
                         </h2>
 
                         <ol class="workflow">
@@ -340,12 +346,12 @@
                                 <span>01</span>
                                 <div>
                                     <strong>
-                                        Configure hardware
+                                        Receive data
                                     </strong>
                                     <p>
-                                        Configure the STM32 peripherals
-                                        and sensor interfaces using
-                                        STM32CubeMX.
+                                        Receive communication messages
+                                        from connected devices through
+                                        the available interfaces.
                                     </p>
                                 </div>
                             </li>
@@ -354,12 +360,12 @@
                                 <span>02</span>
                                 <div>
                                     <strong>
-                                        Acquire measurements
+                                        Process messages
                                     </strong>
                                     <p>
-                                        Read inertial sensor data from
-                                        the embedded target and transfer
-                                        measurements to the host system.
+                                        Handle incoming communication
+                                        using the embedded firmware and
+                                        protocol-specific logic.
                                     </p>
                                 </div>
                             </li>
@@ -368,12 +374,12 @@
                                 <span>03</span>
                                 <div>
                                     <strong>
-                                        Calibrate sensors
+                                        Coordinate tasks
                                     </strong>
                                     <p>
-                                        Collect calibration data and
-                                        determine parameters used to
-                                        improve measurement quality.
+                                        Use FreeRTOS to schedule and
+                                        coordinate the communication
+                                        and application tasks.
                                     </p>
                                 </div>
                             </li>
@@ -382,12 +388,12 @@
                                 <span>04</span>
                                 <div>
                                     <strong>
-                                        Analyse data
+                                        Forward data
                                     </strong>
                                     <p>
-                                        Use Python tooling to process
-                                        and visualise the collected
-                                        measurements.
+                                        Transmit processed information
+                                        through the appropriate
+                                        communication interface.
                                     </p>
                                 </div>
                             </li>
@@ -409,9 +415,8 @@
 
                         <p>
                             The complete project is available on GitHub,
-                            including the STM32CubeMX configuration,
-                            firmware source code and supporting Python
-                            tools.
+                            including the STM32 firmware, communication
+                            interfaces and FreeRTOS-based application.
                         </p>
 
                         <a
@@ -441,16 +446,16 @@
                         <ul class="technology-list">
 
                             <li>C</li>
-                            <li>STM32F303</li>
-                            <li>STM32CubeMX</li>
+                            <li>STM32F3</li>
+                            <li>STM32F3 Discovery</li>
+                            <li>FreeRTOS</li>
+                            <li>Modbus RTU</li>
+                            <li>USART</li>
+                            <li>CAN</li>
+                            <li>MCP2551</li>
+                            <li>CAN Transceiver</li>
                             <li>STM32 HAL</li>
                             <li>Embedded Systems</li>
-                            <li>IMU</li>
-                            <li>Accelerometer</li>
-                            <li>Gyroscope</li>
-                            <li>Magnetometer</li>
-                            <li>Python</li>
-                            <li>UART</li>
                             <li>Git</li>
 
                         </ul>
@@ -465,8 +470,22 @@
                         </p>
 
                         <p>
-                            STM32F303 Discovery board with
-                            onboard inertial sensors.
+                            STM32F3 Discovery board with external
+                            MCP2551 CAN transceivers.
+                        </p>
+
+                    </div>
+
+
+                    <div class="sidebar-block">
+
+                        <p class="sidebar-label">
+                            Communication
+                        </p>
+
+                        <p>
+                            Modbus RTU over USART and CAN bus
+                            communication.
                         </p>
 
                     </div>
@@ -479,8 +498,9 @@
                         </p>
 
                         <p>
-                            Embedded firmware, sensor interfaces,
-                            calibration and measurement processing.
+                            Embedded communication, real-time firmware,
+                            protocol implementation and hardware
+                            interfaces.
                         </p>
 
                     </div>

@@ -232,88 +232,6 @@ p {
 
 
 /* =========================================================
-   Project Hero
-   ========================================================= */
-
-.project-hero {
-    min-height: 55vh;
-}
-
-
-.project-hero .hero-content {
-    max-width: 900px;
-}
-
-
-/* =========================================================
-   Project Image
-   ========================================================= */
-
-.project-image-section {
-    padding: 0 0 80px;
-
-    background: var(--color-background);
-}
-
-
-.project-image-wrapper {
-    overflow: hidden;
-
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-
-    background: var(--color-surface);
-
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.25);
-}
-
-
-.project-image {
-    width: 100%;
-    height: auto;
-}
-
-
-/* =========================================================
-   Project Resources
-   ========================================================= */
-
-.project-resources {
-    padding: 80px 0;
-
-    background: var(--color-background-dark);
-
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-}
-
-
-.resources-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 3rem;
-}
-
-
-.resources-content h2 {
-    margin-bottom: 1rem;
-}
-
-
-.resources-content > div:first-child {
-    max-width: 600px;
-}
-
-
-.resources-content .hero-buttons {
-    flex-shrink: 0;
-}
-
-
-/* =========================================================
    Buttons
    ========================================================= */
 
@@ -403,6 +321,44 @@ p {
 
 .about-content p:last-child {
     margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Skills
+   ========================================================= */
+
+.skill-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.75rem;
+
+    list-style: none;
+}
+
+
+.skill-list li {
+    padding: 0.5rem 1rem;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+
+    color: var(--color-text);
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.skill-list li:hover {
+    border-color: var(--color-accent);
+
+    color: var(--color-accent);
 }
 
 
@@ -888,44 +844,6 @@ p {
 
 
 /* =========================================================
-   Skills
-   ========================================================= */
-
-.skill-list {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 0.75rem;
-
-    list-style: none;
-}
-
-
-.skill-list li {
-    padding: 0.5rem 1rem;
-
-    background: var(--color-surface);
-
-    border: 1px solid var(--color-border);
-    border-radius: 5px;
-
-    color: var(--color-text);
-
-    transition:
-        border-color 0.2s ease,
-        color 0.2s ease;
-}
-
-
-.skill-list li:hover {
-    border-color: var(--color-accent);
-
-    color: var(--color-accent);
-}
-
-
-/* =========================================================
    Contact
    ========================================================= */
 
@@ -958,10 +876,433 @@ p {
 
 
 /* =========================================================
+   IMU Project Page
+   ========================================================= */
+
+/* Project header */
+
+.project-header {
+    padding: 90px 0 80px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            #164e63 0%,
+            transparent 35%
+        );
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+.back-link {
+    display: inline-block;
+
+    margin-bottom: 4rem;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+
+.back-link:hover {
+    color: var(--color-accent);
+}
+
+
+.project-header h1 {
+    max-width: 900px;
+
+    margin-bottom: 1.5rem;
+}
+
+
+.project-lead {
+    max-width: 780px;
+
+    margin-bottom: 3rem;
+
+    font-size: 1.25rem;
+
+    line-height: 1.7;
+}
+
+
+.project-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 2rem;
+
+    padding-top: 2rem;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+.project-meta div {
+    min-width: 150px;
+}
+
+
+.project-meta span {
+    display: block;
+
+    margin-bottom: 0.3rem;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+
+.project-meta strong {
+    color: var(--color-text);
+
+    font-size: 1rem;
+}
+
+
+/* Project layout */
+
+.project-layout {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 280px;
+
+    gap: 5rem;
+
+    align-items: start;
+}
+
+
+.project-main {
+    min-width: 0;
+}
+
+
+.project-section {
+    padding-bottom: 5rem;
+
+    margin-bottom: 5rem;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+.project-section:last-child {
+    padding-bottom: 0;
+
+    margin-bottom: 0;
+
+    border-bottom: none;
+}
+
+
+.project-section h2 {
+    max-width: 750px;
+}
+
+
+.project-section > p:not(.section-label) {
+    max-width: 750px;
+
+    margin-bottom: 1.2rem;
+
+    font-size: 1.05rem;
+}
+
+
+.project-section > p:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* Engineering points */
+
+.project-points {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 2rem;
+
+    margin-top: 2.5rem;
+}
+
+
+.project-points article {
+    padding-top: 1.5rem;
+
+    border-top: 2px solid var(--color-border);
+}
+
+
+.project-points article:hover {
+    border-color: var(--color-accent);
+}
+
+
+.project-points h3 {
+    margin-bottom: 0.75rem;
+
+    font-size: 1.35rem;
+}
+
+
+.project-points p {
+    font-size: 1rem;
+}
+
+
+/* Architecture */
+
+.architecture-list {
+    max-width: 800px;
+
+    margin-top: 2.5rem;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+.architecture-list div {
+    display: grid;
+
+    grid-template-columns: 150px minmax(0, 1fr);
+
+    gap: 2rem;
+
+    padding: 1.25rem 0;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+.architecture-list code {
+    color: var(--color-accent);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 0.9rem;
+}
+
+
+.architecture-list span {
+    color: var(--color-text-muted);
+
+    font-size: 0.95rem;
+}
+
+
+/* Workflow */
+
+.workflow {
+    display: flex;
+
+    flex-direction: column;
+
+    max-width: 800px;
+
+    margin-top: 2.5rem;
+
+    list-style: none;
+}
+
+
+.workflow li {
+    display: grid;
+
+    grid-template-columns: 55px minmax(0, 1fr);
+
+    gap: 1.5rem;
+
+    padding: 1.5rem 0;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+.workflow li:last-child {
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+.workflow li > span {
+    color: var(--color-accent);
+
+    font-family: monospace;
+    font-weight: 700;
+}
+
+
+.workflow strong {
+    display: block;
+
+    margin-bottom: 0.35rem;
+
+    color: var(--color-text);
+
+    font-size: 1.05rem;
+}
+
+
+.workflow p {
+    margin: 0;
+
+    font-size: 0.95rem;
+}
+
+
+/* Project sidebar */
+
+.project-sidebar {
+    position: sticky;
+
+    top: 100px;
+}
+
+
+.sidebar-block {
+    padding: 1.5rem 0;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+.sidebar-block:last-child {
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+.sidebar-label {
+    margin-bottom: 1rem;
+
+    color: var(--color-text);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+
+.sidebar-block > p:last-child {
+    font-size: 0.95rem;
+}
+
+
+.technology-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
+
+    list-style: none;
+}
+
+
+.technology-list li {
+    padding: 0.4rem 0.7rem;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.85rem;
+}
+
+
+/* Project bottom navigation */
+
+.project-next {
+    padding: 80px 0;
+
+    background: var(--color-background-dark);
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+.project-next-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+}
+
+
+.project-next-content h2 {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
    Responsive
    ========================================================= */
 
+@media (max-width: 900px) {
+
+    .project-layout {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .project-sidebar {
+        position: static;
+
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 2rem;
+
+        padding-top: 3rem;
+
+        border-top: 1px solid var(--color-border);
+    }
+
+
+    .sidebar-block {
+        border-top: none;
+    }
+
+
+    .sidebar-block:last-child {
+        border-bottom: none;
+    }
+
+}
+
+
 @media (max-width: 800px) {
+
+    .project-points {
+        grid-template-columns: 1fr;
+    }
+
 
     .resources-content {
         flex-direction: column;
@@ -1008,11 +1349,6 @@ p {
     }
 
 
-    .project-hero {
-        min-height: 60vh;
-    }
-
-
     .hero-description {
         font-size: 1.15rem;
     }
@@ -1025,30 +1361,96 @@ p {
     }
 
 
-    /* Project image */
+    /* Project header */
 
-    .project-image-section {
-        padding-bottom: 50px;
-    }
-
-
-    /* Project resources */
-
-    .project-resources {
+    .project-header {
         padding: 60px 0;
     }
 
 
-    /* Project cards */
-
-    .project-card {
-        padding: 1.5rem;
+    .back-link {
+        margin-bottom: 3rem;
     }
 
 
-    /* =====================================================
-       Experience Timeline — Mobile
-       ===================================================== */
+    .project-lead {
+        font-size: 1.1rem;
+    }
+
+
+    .project-meta {
+        gap: 1.5rem;
+    }
+
+
+    .project-meta div {
+        min-width: 120px;
+    }
+
+
+    /* Project sections */
+
+    .project-section {
+        padding-bottom: 4rem;
+
+        margin-bottom: 4rem;
+    }
+
+
+    /* Architecture */
+
+    .architecture-list div {
+        grid-template-columns: 1fr;
+
+        gap: 0.35rem;
+    }
+
+
+    /* Project sidebar */
+
+    .project-sidebar {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .sidebar-block {
+        padding: 1.5rem 0;
+
+        border-top: 1px solid var(--color-border);
+    }
+
+
+    .sidebar-block:last-child {
+        border-bottom: 1px solid var(--color-border);
+    }
+
+
+    /* Workflow */
+
+    .workflow li {
+        grid-template-columns: 40px minmax(0, 1fr);
+
+        gap: 1rem;
+    }
+
+
+    /* Project navigation */
+
+    .project-next {
+        padding: 60px 0;
+    }
+
+
+    .project-next-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    /* Experience Timeline — Mobile */
 
     .experience-timeline {
         margin-top: 2rem;
@@ -1100,9 +1502,7 @@ p {
     }
 
 
-    /* =====================================================
-       Education Timeline — Mobile
-       ===================================================== */
+    /* Education Timeline — Mobile */
 
     .education-timeline {
         margin-top: 2rem;
@@ -1180,10 +1580,6 @@ p {
 }
 
 
-/* =========================================================
-   Very Small Screens
-   ========================================================= */
-
 @media (max-width: 450px) {
 
     .container {
@@ -1215,6 +1611,23 @@ p {
         width: 100%;
 
         text-align: center;
+    }
+
+
+    .project-header h1 {
+        font-size: clamp(2.5rem, 13vw, 3.5rem);
+    }
+
+
+    .project-meta {
+        flex-direction: column;
+
+        gap: 1.25rem;
+    }
+
+
+    .project-points {
+        gap: 1.5rem;
     }
 
 
