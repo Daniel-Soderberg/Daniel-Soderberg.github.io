@@ -29,8 +29,6 @@
 
 <body>
 
-    <!-- Navigation -->
-
     <header class="site-header">
 
         <nav class="navbar container">
@@ -41,41 +39,12 @@
 
             <ul class="nav-links">
 
-                <li>
-                    <a href="../../#about">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#skills">
-                        Skills
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#experience">
-                        Experience
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#education">
-                        Education
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#projects">
-                        Projects
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#contact">
-                        Contact
-                    </a>
-                </li>
+                <li><a href="../../#about">About</a></li>
+                <li><a href="../../#skills">Skills</a></li>
+                <li><a href="../../#experience">Experience</a></li>
+                <li><a href="../../#education">Education</a></li>
+                <li><a href="../../#projects">Projects</a></li>
+                <li><a href="../../#contact">Contact</a></li>
 
             </ul>
 
@@ -127,7 +96,7 @@
                     </div>
 
                     <div>
-                        <span>Architecture</span>
+                        <span>RTOS</span>
                         <strong>FreeRTOS</strong>
                     </div>
 
@@ -138,15 +107,15 @@
         </section>
 
 
-        <!-- Main Project Content -->
+        <!-- Project Content -->
 
         <section class="section">
 
             <div class="container project-layout">
 
-                <!-- Main Content -->
-
                 <div class="project-main">
+
+                    <!-- Overview -->
 
                     <section class="project-section">
 
@@ -183,6 +152,8 @@
                     </section>
 
 
+                    <!-- Engineering -->
+
                     <section class="project-section">
 
                         <p class="section-label">
@@ -204,9 +175,8 @@
                                 <p>
                                     Developed a Modbus RTU communication
                                     interface over USART, handling
-                                    serial communication and the
-                                    exchange of structured Modbus
-                                    messages.
+                                    serial communication and structured
+                                    Modbus messages.
                                 </p>
 
                             </article>
@@ -221,9 +191,8 @@
                                 <p>
                                     Implemented CAN communication using
                                     the STM32 CAN peripheral together
-                                    with external MCP2551 CAN
-                                    transceivers to interface with
-                                    the physical CAN bus.
+                                    with MCP2551 CAN transceivers for
+                                    the physical CAN bus interface.
                                 </p>
 
                             </article>
@@ -254,7 +223,7 @@
                                 <p>
                                     Developed the gateway firmware in C,
                                     working with STM32 peripherals,
-                                    hardware interfaces and the
+                                    communication interfaces and
                                     real-time software architecture.
                                 </p>
 
@@ -265,6 +234,8 @@
                     </section>
 
 
+                    <!-- Architecture -->
+
                     <section class="project-section">
 
                         <p class="section-label">
@@ -272,7 +243,7 @@
                         </p>
 
                         <h2>
-                            Gateway architecture
+                            Communication architecture
                         </h2>
 
                         <p>
@@ -330,6 +301,8 @@
                     </section>
 
 
+                    <!-- Workflow -->
+
                     <section class="project-section">
 
                         <p class="section-label">
@@ -344,64 +317,113 @@
 
                             <li>
                                 <span>01</span>
+
                                 <div>
                                     <strong>
                                         Receive data
                                     </strong>
+
                                     <p>
                                         Receive communication messages
                                         from connected devices through
                                         the available interfaces.
                                     </p>
                                 </div>
+
                             </li>
+
 
                             <li>
                                 <span>02</span>
+
                                 <div>
                                     <strong>
                                         Process messages
                                     </strong>
+
                                     <p>
                                         Handle incoming communication
                                         using the embedded firmware and
                                         protocol-specific logic.
                                     </p>
                                 </div>
+
                             </li>
+
 
                             <li>
                                 <span>03</span>
+
                                 <div>
                                     <strong>
                                         Coordinate tasks
                                     </strong>
+
                                     <p>
                                         Use FreeRTOS to schedule and
-                                        coordinate the communication
-                                        and application tasks.
+                                        coordinate communication and
+                                        application tasks.
                                     </p>
                                 </div>
+
                             </li>
+
 
                             <li>
                                 <span>04</span>
+
                                 <div>
                                     <strong>
                                         Forward data
                                     </strong>
+
                                     <p>
                                         Transmit processed information
                                         through the appropriate
                                         communication interface.
                                     </p>
                                 </div>
+
                             </li>
 
                         </ol>
 
                     </section>
 
+
+                    <!-- Technologies -->
+
+                    <section class="project-section">
+
+                        <p class="section-label">
+                            Technologies
+                        </p>
+
+                        <h2>
+                            Tools & technologies
+                        </h2>
+
+                        <ul class="technology-list">
+
+                            <li>C</li>
+                            <li>STM32F3</li>
+                            <li>STM32F3 Discovery</li>
+                            <li>FreeRTOS</li>
+                            <li>Modbus RTU</li>
+                            <li>USART</li>
+                            <li>CAN</li>
+                            <li>MCP2551</li>
+                            <li>CAN Transceiver</li>
+                            <li>STM32 HAL</li>
+                            <li>Embedded Systems</li>
+                            <li>Git</li>
+
+                        </ul>
+
+                    </section>
+
+
+                    <!-- Repository -->
 
                     <section class="project-section">
 
@@ -432,87 +454,12 @@
 
                 </div>
 
-
-                <!-- Project Sidebar -->
-
-                <aside class="project-sidebar">
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Technologies
-                        </p>
-
-                        <ul class="technology-list">
-
-                            <li>C</li>
-                            <li>STM32F3</li>
-                            <li>STM32F3 Discovery</li>
-                            <li>FreeRTOS</li>
-                            <li>Modbus RTU</li>
-                            <li>USART</li>
-                            <li>CAN</li>
-                            <li>MCP2551</li>
-                            <li>CAN Transceiver</li>
-                            <li>STM32 HAL</li>
-                            <li>Embedded Systems</li>
-                            <li>Git</li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Hardware
-                        </p>
-
-                        <p>
-                            STM32F3 Discovery board with external
-                            MCP2551 CAN transceivers.
-                        </p>
-
-                    </div>
-
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Communication
-                        </p>
-
-                        <p>
-                            Modbus RTU over USART and CAN bus
-                            communication.
-                        </p>
-
-                    </div>
-
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Focus
-                        </p>
-
-                        <p>
-                            Embedded communication, real-time firmware,
-                            protocol implementation and hardware
-                            interfaces.
-                        </p>
-
-                    </div>
-
-                </aside>
-
             </div>
 
         </section>
 
 
-        <!-- Project Footer Navigation -->
+        <!-- More Projects -->
 
         <section class="project-next">
 
@@ -547,8 +494,6 @@
 
     </main>
 
-
-    <!-- Footer -->
 
     <footer class="site-footer">
 

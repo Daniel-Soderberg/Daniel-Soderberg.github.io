@@ -16,7 +16,7 @@
 
     <meta
         name="description"
-        content="Embedded motor control development using an IHM03 motor development kit, STM32 peripherals, synchronized PWM and ADC sampling, and open-loop Space Vector Modulation."
+        content="Embedded motor control development using an IHM03 motor development kit, synchronized PWM and ADC sampling, and open-loop Space Vector Modulation."
     >
 
     <link
@@ -29,8 +29,6 @@
 
 <body>
 
-    <!-- Navigation -->
-
     <header class="site-header">
 
         <nav class="navbar container">
@@ -41,41 +39,12 @@
 
             <ul class="nav-links">
 
-                <li>
-                    <a href="../../#about">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#skills">
-                        Skills
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#experience">
-                        Experience
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#education">
-                        Education
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#projects">
-                        Projects
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#contact">
-                        Contact
-                    </a>
-                </li>
+                <li><a href="../../#about">About</a></li>
+                <li><a href="../../#skills">Skills</a></li>
+                <li><a href="../../#experience">Experience</a></li>
+                <li><a href="../../#education">Education</a></li>
+                <li><a href="../../#projects">Projects</a></li>
+                <li><a href="../../#contact">Contact</a></li>
 
             </ul>
 
@@ -122,13 +91,13 @@
                     </div>
 
                     <div>
-                        <span>Control</span>
-                        <strong>Space Vector Modulation</strong>
+                        <span>Language</span>
+                        <strong>C</strong>
                     </div>
 
                     <div>
-                        <span>Development</span>
-                        <strong>STM32CubeMX · C</strong>
+                        <span>Control</span>
+                        <strong>Open-loop SVM</strong>
                     </div>
 
                 </div>
@@ -138,15 +107,15 @@
         </section>
 
 
-        <!-- Main Project Content -->
+        <!-- Project Content -->
 
         <section class="section">
 
             <div class="container project-layout">
 
-                <!-- Main Content -->
-
                 <div class="project-main">
+
+                    <!-- Overview -->
 
                     <section class="project-section">
 
@@ -165,11 +134,11 @@
                         </p>
 
                         <p>
-                            The project started with configuring the
-                            microcontroller peripherals using STM32CubeMX.
-                            The peripheral configuration and timing
-                            requirements were then developed with a focus
-                            on the requirements of motor control.
+                            The project uses STM32CubeMX to generate
+                            the initial firmware configuration, while
+                            the required peripheral setup and timing
+                            configuration have been developed with
+                            the motor-control application in mind.
                         </p>
 
                         <p>
@@ -181,6 +150,8 @@
 
                     </section>
 
+
+                    <!-- Engineering -->
 
                     <section class="project-section">
 
@@ -201,11 +172,10 @@
                                 </h3>
 
                                 <p>
-                                    Configured the required
-                                    microcontroller peripherals using
-                                    STM32CubeMX, with the peripheral
-                                    setup selected specifically for
-                                    the motor-control application.
+                                    Configured the STM32 peripherals
+                                    required for the motor-control
+                                    application, including timer and
+                                    ADC functionality.
                                 </p>
 
                             </article>
@@ -214,15 +184,14 @@
                             <article>
 
                                 <h3>
-                                    PWM generation
+                                    Center-aligned PWM
                                 </h3>
 
                                 <p>
-                                    Configured the PWM timer for
-                                    center-aligned operation using
-                                    up-down counting mode, providing
-                                    symmetrical switching suitable for
-                                    motor-control applications.
+                                    Configured PWM generation using
+                                    up-down counting mode to create
+                                    center-aligned switching suitable
+                                    for the motor-control application.
                                 </p>
 
                             </article>
@@ -231,16 +200,15 @@
                             <article>
 
                                 <h3>
-                                    Synchronized ADC sampling
+                                    ADC synchronization
                                 </h3>
 
                                 <p>
-                                    Configured ADC sampling to occur
-                                    during the PWM off cycles. This is
-                                    particularly important for the
-                                    low-side current measurement
-                                    topology used by the motor
-                                    development kit.
+                                    Configured ADC sampling around the
+                                    PWM switching cycle so that current
+                                    measurements are taken during
+                                    suitable off-cycle intervals for
+                                    the low-side current measurement.
                                 </p>
 
                             </article>
@@ -255,8 +223,7 @@
                                 <p>
                                     Implemented open-loop Space Vector
                                     Modulation to generate the three-phase
-                                    PWM signals required to drive the
-                                    motor.
+                                    PWM duty cycles used to drive the motor.
                                 </p>
 
                             </article>
@@ -265,6 +232,8 @@
 
                     </section>
 
+
+                    <!-- Architecture -->
 
                     <section class="project-section">
 
@@ -281,9 +250,14 @@
                             relationship between PWM generation and ADC
                             sampling. The PWM timer operates in up-down
                             counting mode, while ADC measurements are
-                            scheduled during the switching intervals where
-                            the low-side current measurement provides a
-                            suitable measurement window.
+                            synchronized with the switching cycle.
+                        </p>
+
+                        <p>
+                            Because the development kit uses low-side
+                            current measurement, the ADC sampling window
+                            is placed during suitable PWM off cycles to
+                            obtain the current measurements.
                         </p>
 
                         <div class="architecture-list">
@@ -308,7 +282,7 @@
                                 <code>Low-side sensing</code>
                                 <span>
                                     Current measurements taken during
-                                    appropriate PWM off cycles
+                                    suitable PWM off cycles
                                 </span>
                             </div>
 
@@ -316,15 +290,15 @@
                                 <code>SVM</code>
                                 <span>
                                     Space Vector Modulation generating
-                                    three-phase voltage references
+                                    three-phase PWM duty cycles
                                 </span>
                             </div>
 
                             <div>
                                 <code>STM32CubeMX</code>
                                 <span>
-                                    Peripheral configuration and
-                                    microcontroller initialization
+                                    Microcontroller peripheral
+                                    configuration and initialization
                                 </span>
                             </div>
 
@@ -333,6 +307,8 @@
                     </section>
 
 
+                    <!-- Workflow -->
+
                     <section class="project-section">
 
                         <p class="section-label">
@@ -340,17 +316,19 @@
                         </p>
 
                         <h2>
-                            From voltage reference to motor drive
+                            From reference to motor drive
                         </h2>
 
                         <ol class="workflow">
 
                             <li>
                                 <span>01</span>
+
                                 <div>
                                     <strong>
                                         Configure peripherals
                                     </strong>
+
                                     <p>
                                         Configure the STM32 timers,
                                         ADC and supporting peripherals
@@ -358,55 +336,70 @@
                                         application.
                                     </p>
                                 </div>
+
                             </li>
+
 
                             <li>
                                 <span>02</span>
+
                                 <div>
                                     <strong>
-                                        Generate voltage references
+                                        Generate voltage reference
                                     </strong>
+
                                     <p>
-                                        Calculate the desired rotating
-                                        voltage vector for the open-loop
+                                        Generate the rotating voltage
+                                        reference used by the open-loop
                                         motor-control system.
                                     </p>
                                 </div>
+
                             </li>
+
 
                             <li>
                                 <span>03</span>
+
                                 <div>
                                     <strong>
                                         Apply Space Vector Modulation
                                     </strong>
+
                                     <p>
                                         Convert the voltage reference
-                                        into the corresponding three-phase
-                                        PWM duty cycles.
+                                        into three-phase PWM duty cycles
+                                        for the motor inverter.
                                     </p>
                                 </div>
+
                             </li>
+
 
                             <li>
                                 <span>04</span>
+
                                 <div>
                                     <strong>
                                         Sample motor currents
                                     </strong>
+
                                     <p>
                                         Trigger ADC measurements during
-                                        suitable PWM off cycles to acquire
-                                        current information from the
-                                        low-side measurement circuitry.
+                                        suitable PWM off cycles to
+                                        acquire current information from
+                                        the low-side measurement circuitry.
                                     </p>
                                 </div>
+
                             </li>
 
                         </ol>
 
                     </section>
 
+
+                    <!-- Current Status -->
 
                     <section class="project-section">
 
@@ -421,20 +414,52 @@
                         <p>
                             The current implementation focuses on
                             establishing the low-level motor-control
-                            infrastructure and validating the PWM,
-                            ADC timing and Space Vector Modulation
-                            functionality.
+                            infrastructure and validating PWM timing,
+                            ADC sampling and Space Vector Modulation.
                         </p>
 
                         <p>
                             The system currently operates in open loop,
-                            providing a foundation for further development
-                            of current measurement processing and
-                            closed-loop motor-control functionality.
+                            providing a foundation for further
+                            development of current measurement processing
+                            and closed-loop motor-control functionality.
                         </p>
 
                     </section>
 
+
+                    <!-- Technologies -->
+
+                    <section class="project-section">
+
+                        <p class="section-label">
+                            Technologies
+                        </p>
+
+                        <h2>
+                            Tools & technologies
+                        </h2>
+
+                        <ul class="technology-list">
+
+                            <li>C</li>
+                            <li>STM32</li>
+                            <li>STM32CubeMX</li>
+                            <li>STM32 HAL</li>
+                            <li>IHM03</li>
+                            <li>Motor Control</li>
+                            <li>PWM</li>
+                            <li>ADC</li>
+                            <li>Space Vector Modulation</li>
+                            <li>Embedded Systems</li>
+                            <li>Git</li>
+
+                        </ul>
+
+                    </section>
+
+
+                    <!-- Repository -->
 
                     <section class="project-section">
 
@@ -464,100 +489,12 @@
 
                 </div>
 
-
-                <!-- Project Sidebar -->
-
-                <aside class="project-sidebar">
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Technologies
-                        </p>
-
-                        <ul class="technology-list">
-
-                            <li>C</li>
-                            <li>STM32</li>
-                            <li>STM32CubeMX</li>
-                            <li>STM32 HAL</li>
-                            <li>IHM03</li>
-                            <li>Motor Control</li>
-                            <li>PWM</li>
-                            <li>ADC</li>
-                            <li>Space Vector Modulation</li>
-                            <li>Embedded Systems</li>
-                            <li>Git</li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Hardware
-                        </p>
-
-                        <p>
-                            IHM03 motor development kit with
-                            low-side current measurement.
-                        </p>
-
-                    </div>
-
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Control
-                        </p>
-
-                        <p>
-                            Open-loop Space Vector Modulation
-                            with center-aligned PWM generation.
-                        </p>
-
-                    </div>
-
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Measurement
-                        </p>
-
-                        <p>
-                            ADC current sampling synchronized
-                            with the PWM switching cycle.
-                        </p>
-
-                    </div>
-
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Focus
-                        </p>
-
-                        <p>
-                            Motor-control peripherals, PWM timing,
-                            current measurement and embedded
-                            control algorithms.
-                        </p>
-
-                    </div>
-
-                </aside>
-
             </div>
 
         </section>
 
 
-        <!-- Project Footer Navigation -->
+        <!-- More Projects -->
 
         <section class="project-next">
 
@@ -592,8 +529,6 @@
 
     </main>
 
-
-    <!-- Footer -->
 
     <footer class="site-footer">
 

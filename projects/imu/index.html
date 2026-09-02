@@ -29,8 +29,6 @@
 
 <body>
 
-    <!-- Navigation -->
-
     <header class="site-header">
 
         <nav class="navbar container">
@@ -41,41 +39,12 @@
 
             <ul class="nav-links">
 
-                <li>
-                    <a href="../../#about">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#skills">
-                        Skills
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#experience">
-                        Experience
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#education">
-                        Education
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#projects">
-                        Projects
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../../#contact">
-                        Contact
-                    </a>
-                </li>
+                <li><a href="../../#about">About</a></li>
+                <li><a href="../../#skills">Skills</a></li>
+                <li><a href="../../#experience">Experience</a></li>
+                <li><a href="../../#education">Education</a></li>
+                <li><a href="../../#projects">Projects</a></li>
+                <li><a href="../../#contact">Contact</a></li>
 
             </ul>
 
@@ -128,7 +97,7 @@
 
                     <div>
                         <span>Tools</span>
-                        <strong>STM32CubeMX · Python</strong>
+                        <strong>CubeMX · Python</strong>
                     </div>
 
                 </div>
@@ -138,15 +107,15 @@
         </section>
 
 
-        <!-- Main Project Content -->
+        <!-- Project Content -->
 
         <section class="section">
 
             <div class="container project-layout">
 
-                <!-- Main Content -->
-
                 <div class="project-main">
+
+                    <!-- Overview -->
 
                     <section class="project-section">
 
@@ -180,6 +149,8 @@
 
                     </section>
 
+
+                    <!-- Engineering -->
 
                     <section class="project-section">
 
@@ -264,6 +235,8 @@
                     </section>
 
 
+                    <!-- Architecture -->
+
                     <section class="project-section">
 
                         <p class="section-label">
@@ -324,6 +297,8 @@
                     </section>
 
 
+                    <!-- Workflow -->
+
                     <section class="project-section">
 
                         <p class="section-label">
@@ -338,64 +313,113 @@
 
                             <li>
                                 <span>01</span>
+
                                 <div>
                                     <strong>
                                         Configure hardware
                                     </strong>
+
                                     <p>
                                         Configure the STM32 peripherals
                                         and sensor interfaces using
                                         STM32CubeMX.
                                     </p>
                                 </div>
+
                             </li>
+
 
                             <li>
                                 <span>02</span>
+
                                 <div>
                                     <strong>
                                         Acquire measurements
                                     </strong>
+
                                     <p>
                                         Read inertial sensor data from
                                         the embedded target and transfer
                                         measurements to the host system.
                                     </p>
                                 </div>
+
                             </li>
+
 
                             <li>
                                 <span>03</span>
+
                                 <div>
                                     <strong>
                                         Calibrate sensors
                                     </strong>
+
                                     <p>
                                         Collect calibration data and
                                         determine parameters used to
                                         improve measurement quality.
                                     </p>
                                 </div>
+
                             </li>
+
 
                             <li>
                                 <span>04</span>
+
                                 <div>
                                     <strong>
                                         Analyse data
                                     </strong>
+
                                     <p>
                                         Use Python tooling to process
                                         and visualise the collected
                                         measurements.
                                     </p>
                                 </div>
+
                             </li>
 
                         </ol>
 
                     </section>
 
+
+                    <!-- Technologies -->
+
+                    <section class="project-section">
+
+                        <p class="section-label">
+                            Technologies
+                        </p>
+
+                        <h2>
+                            Tools & technologies
+                        </h2>
+
+                        <ul class="technology-list">
+
+                            <li>C</li>
+                            <li>STM32F303</li>
+                            <li>STM32CubeMX</li>
+                            <li>STM32 HAL</li>
+                            <li>Embedded Systems</li>
+                            <li>IMU</li>
+                            <li>Accelerometer</li>
+                            <li>Gyroscope</li>
+                            <li>Magnetometer</li>
+                            <li>Python</li>
+                            <li>UART</li>
+                            <li>Git</li>
+
+                        </ul>
+
+                    </section>
+
+
+                    <!-- Repository -->
 
                     <section class="project-section">
 
@@ -427,72 +451,12 @@
 
                 </div>
 
-
-                <!-- Project Sidebar -->
-
-                <aside class="project-sidebar">
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Technologies
-                        </p>
-
-                        <ul class="technology-list">
-
-                            <li>C</li>
-                            <li>STM32F303</li>
-                            <li>STM32CubeMX</li>
-                            <li>STM32 HAL</li>
-                            <li>Embedded Systems</li>
-                            <li>IMU</li>
-                            <li>Accelerometer</li>
-                            <li>Gyroscope</li>
-                            <li>Magnetometer</li>
-                            <li>Python</li>
-                            <li>UART</li>
-                            <li>Git</li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Hardware
-                        </p>
-
-                        <p>
-                            STM32F303 Discovery board with
-                            onboard inertial sensors.
-                        </p>
-
-                    </div>
-
-
-                    <div class="sidebar-block">
-
-                        <p class="sidebar-label">
-                            Focus
-                        </p>
-
-                        <p>
-                            Embedded firmware, sensor interfaces,
-                            calibration and measurement processing.
-                        </p>
-
-                    </div>
-
-                </aside>
-
             </div>
 
         </section>
 
 
-        <!-- Project Footer Navigation -->
+        <!-- More Projects -->
 
         <section class="project-next">
 
@@ -527,8 +491,6 @@
 
     </main>
 
-
-    <!-- Footer -->
 
     <footer class="site-footer">
 
